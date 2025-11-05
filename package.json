@@ -9,6 +9,7 @@
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "clean": "rm -rf dist",
+    "hello": "tsx examples/hello-world-agent.ts 2>/dev/null",
     "research": "tsx examples/research-agent.ts 2>/dev/null",
     "presales": "tsx examples/presales-agent.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
