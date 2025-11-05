@@ -152,11 +152,11 @@ Format for executive audience:
   private getModelByDepth(): string {
     switch (this.config.depth) {
       case 'quick':
-        return 'claude-3-haiku-20240307';  // Fast, cost-effective
+        return 'claude-3-5-haiku-20241022';  // Fast, cost-effective
       case 'standard':
         return 'claude-3-5-sonnet-20241022';  // Balanced
       case 'comprehensive':
-        return 'claude-3-opus-20240229';  // Most capable
+        return 'claude-3-5-opus-20241022';  // Most capable
       default:
         return 'claude-3-5-sonnet-20241022';
     }

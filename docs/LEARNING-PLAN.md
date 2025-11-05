@@ -365,7 +365,7 @@ async function weeklyMarketScan() {
 ```typescript
 const optimizedConfig = {
   // Use Haiku for simple tasks
-  model: complexity === 'low' ? 'claude-3-haiku-20240307' : 'claude-3-5-sonnet-20241022',
+  model: complexity === 'low' ? 'claude-3-5-haiku-20241022' : 'claude-3-5-sonnet-20241022',
 
   // Limit context with smart pruning
   maxThinkingTokens: 5000,
@@ -598,9 +598,9 @@ try {
 ```
 
 ### Cost Optimization
-- Use Haiku for simple tasks ($0.25 per million tokens)
-- Use Sonnet for balanced tasks ($3 per million tokens)
-- Use Opus only for complex reasoning ($15 per million tokens)
+- Use Haiku 3.5 for simple tasks (fastest, most cost-effective)
+- Use Sonnet 3.5 for balanced tasks (best overall value)
+- Use Opus 3.5 only for complex reasoning (highest capability)
 - Implement caching for repeated queries
 - Batch similar operations
 

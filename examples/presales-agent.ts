@@ -273,7 +273,7 @@ Lead context:
 Generate a multi-touch follow-up sequence with specific messages for each touchpoint.`,
 
       options: {
-        model: 'claude-3-haiku-20240307',  // Use faster model for templates
+        model: 'claude-3-5-haiku-20241022',  // Use faster model for templates
         systemPrompt,
         allowedTools: ['Write'],
         maxTurns: 10
