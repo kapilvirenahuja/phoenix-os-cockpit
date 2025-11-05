@@ -17,9 +17,9 @@ This comprehensive 6-week learning plan will guide you through building sophisti
 ### Day 1-2: Environment Setup & Basics
 - [x] Install Node.js 18+ and TypeScript
 - [x] Set up Claude Agent SDK: `npm install @anthropic-ai/claude-agent-sdk`
-- [ ] Create first "Hello World" agent
-- [ ] Understand the three-beat loop: Gather → Act → Verify
-- [ ] Set up API key and environment variables
+- [x] Create first "Hello World" agent
+- [x] Understand the three-beat loop: Gather → Act → Verify
+- [x] Set up API key and environment variables
 
 **Key Concepts:**
 - Agent Loop Architecture
@@ -28,10 +28,10 @@ This comprehensive 6-week learning plan will guide you through building sophisti
 - Streaming vs Single-mode execution
 
 ### Day 3-4: Core Components
-- [ ] Learn about System Prompts and how they define agent behavior
-- [ ] Explore built-in tools (Read, Write, WebSearch, WebFetch)
-- [ ] Practice tool permissions and access control
-- [ ] Build a simple file reader agent
+- [x] Learn about System Prompts and how they define agent behavior
+- [x] Explore built-in tools (Read, Write, WebSearch, WebFetch)
+- [x] Practice tool permissions and access control
+- [x] Build a simple file reader agent
 
 **Practice Exercise:**
 ```typescript
@@ -60,7 +60,7 @@ async function basicAgent() {
 - [ ] Create error handling patterns
 - [ ] Build type-safe tool definitions
 
-**Deliverable:** Basic agent that can read files and search the web
+**Deliverable:** Basic agent that can read files and search the web ✅ **COMPLETED**
 
 ---
 
