@@ -17,9 +17,22 @@ interface ResearchConfig {
 
 class ResearchAgent {
   private config: ResearchConfig;
+  private isDevelopment: boolean;
 
   constructor(config: ResearchConfig) {
-    this.config = config;
+    this.isDevelopment = process.env.NODE_ENV === 'development';
+
+    // Override settings in development mode for cost-effective testing
+    if (this.isDevelopment) {
+      console.log("⚠️  Development Mode: Using Haiku model with quick depth for cost-effective testing");
+      this.config = {
+        ...config,
+        depth: 'quick',  // Force quick depth in dev
+        outputFormat: 'summary'  // Use summary format in dev
+      };
+    } else {
+      this.config = config;
+    }
   }
 
   /**
@@ -28,9 +41,16 @@ class ResearchAgent {
   async research(): Promise<string> {
     const results: string[] = [];
 
-    console.log(`🔍 Starting research on: ${this.config.topic}`);
-    console.log(`📊 Depth: ${this.config.depth}`);
-    console.log(`📝 Format: ${this.config.outputFormat}`);
+    if (this.isDevelopment) {
+      console.log("🧪 DEV MODE ACTIVE - Using cost-optimized settings");
+      console.log(`🔍 Research topic: ${this.config.topic}`);
+      console.log(`⚡ Model: Haiku 4.5 (fastest/cheapest)`);
+      console.log(`📊 Depth: quick (5 iterations max)`);
+    } else {
+      console.log(`🔍 Starting research on: ${this.config.topic}`);
+      console.log(`📊 Depth: ${this.config.depth}`);
+      console.log(`📝 Format: ${this.config.outputFormat}`);
+    }
 
     const searchIterations = this.getSearchIterations();
     const systemPrompt = this.buildSystemPrompt();
@@ -150,6 +170,11 @@ Format for executive audience:
    * Determine model based on depth
    */
   private getModelByDepth(): string {
+    // Always use Haiku in development mode for cost savings
+    if (this.isDevelopment) {
+      return 'claude-haiku-4-5-20251001';  // Dev mode: always use fastest/cheapest
+    }
+
     switch (this.config.depth) {
       case 'quick':
         return 'claude-haiku-4-5-20251001';  // Fast, cost-effective
@@ -166,6 +191,11 @@ Format for executive audience:
    * Get number of search iterations based on depth
    */
   private getSearchIterations(): number {
+    // Reduce iterations in development mode for faster testing
+    if (this.isDevelopment) {
+      return 5;  // Dev mode: minimal iterations for quick testing
+    }
+
     switch (this.config.depth) {
       case 'quick': return 10;
       case 'standard': return 20;
@@ -180,13 +210,15 @@ Format for executive audience:
   private formatResults(results: string[]): string {
     const timestamp = new Date().toISOString();
     const divider = "=".repeat(60);
+    const mode = this.isDevelopment ? " [DEV MODE - LIMITED DEPTH]" : "";
 
     return `
 ${divider}
-RESEARCH REPORT
+RESEARCH REPORT${mode}
 Topic: ${this.config.topic}
 Generated: ${timestamp}
 Depth: ${this.config.depth}
+Model: ${this.isDevelopment ? 'Haiku 4.5 (Dev Mode)' : 'Auto-selected based on depth'}
 ${divider}
 
 ${results.join("\n\n")}
