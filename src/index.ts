@@ -19,8 +19,8 @@ async function main() {
     for await (const message of query({
       prompt,
       options: {
-        // Model selection - using Sonnet for balanced performance
-        model: "claude-3-5-sonnet-20241022",
+        // Model selection - using Sonnet 4.5 for balanced performance
+        model: "claude-sonnet-4-5-20250929",
 
         // System prompt defines agent behavior
         systemPrompt: `You are a helpful AI assistant built with the Claude Agent SDK.

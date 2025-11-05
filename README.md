@@ -18,7 +18,7 @@ Phoenix OS Cockpit is designed to create autonomous AI agents for business intel
 - **Runtime**: Node.js 18+
 - **Language**: TypeScript
 - **AI Framework**: Claude Agent SDK (@anthropic-ai/claude-agent-sdk)
-- **Models**: Claude 3.5 Haiku / Claude 3.5 Sonnet / Claude 3.5 Opus
+- **Models**: Claude Haiku 4.5 / Claude Sonnet 4.5 / Claude Opus 4.1
 
 ## Getting Started
 

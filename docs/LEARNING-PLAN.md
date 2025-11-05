@@ -41,7 +41,7 @@ async function basicAgent() {
   for await (const msg of query({
     prompt: "Read and summarize the README.md file",
     options: {
-      model: "claude-3-5-sonnet-20241022",
+      model: "claude-sonnet-4-5-20250929",
       allowedTools: ['Read', 'Glob'],
       maxTurns: 5
     }
@@ -358,14 +358,14 @@ async function weeklyMarketScan() {
 ### Day 36-37: Performance Tuning
 - [ ] Optimize context usage (40% reduction techniques)
 - [ ] Implement caching strategies
-- [ ] Use appropriate models (Haiku for simple, Opus for complex)
+- [ ] Use appropriate models (Haiku 4.5 for simple, Opus 4.1 for complex)
 - [ ] Add batch processing
 
 **Performance Optimization Strategies:**
 ```typescript
 const optimizedConfig = {
   // Use Haiku for simple tasks
-  model: complexity === 'low' ? 'claude-3-5-haiku-20241022' : 'claude-3-5-sonnet-20241022',
+  model: complexity === 'low' ? 'claude-haiku-4-5-20251001' : 'claude-sonnet-4-5-20250929',
 
   // Limit context with smart pruning
   maxThinkingTokens: 5000,
@@ -389,17 +389,17 @@ const optimizedConfig = {
 ```
 Orchestrator Agent
 ├── Research Team
-│   ├── Web Researcher (Haiku)
-│   ├── Document Analyzer (Sonnet)
-│   └── Data Extractor (Haiku)
+│   ├── Web Researcher (Haiku 4.5)
+│   ├── Document Analyzer (Sonnet 4.5)
+│   └── Data Extractor (Haiku 4.5)
 ├── Analysis Team
-│   ├── Competitive Analyst (Sonnet)
-│   ├── Market Analyst (Sonnet)
-│   └── Opportunity Identifier (Opus)
+│   ├── Competitive Analyst (Sonnet 4.5)
+│   ├── Market Analyst (Sonnet 4.5)
+│   └── Opportunity Identifier (Opus 4.1)
 └── Output Team
-    ├── Report Generator (Haiku)
-    ├── Presentation Builder (Sonnet)
-    └── Executive Summarizer (Sonnet)
+    ├── Report Generator (Haiku 4.5)
+    ├── Presentation Builder (Sonnet 4.5)
+    └── Executive Summarizer (Sonnet 4.5)
 ```
 
 ### Day 40-42: Deployment & Monitoring
@@ -550,7 +550,7 @@ Orchestrator Agent
 
 ### Development Tips
 1. **Start Simple:** Begin with single tools, then combine
-2. **Test Often:** Use Haiku model for rapid testing (faster, cheaper)
+2. **Test Often:** Use Haiku 4.5 model for rapid testing (faster, cheaper)
 3. **Version Control:** Track all agent configurations and prompts
 4. **Document Everything:** Maintain clear documentation of agent behaviors
 5. **Iterate Quickly:** Get basic version working, then optimize
@@ -598,9 +598,9 @@ try {
 ```
 
 ### Cost Optimization
-- Use Haiku 3.5 for simple tasks (fastest, most cost-effective)
-- Use Sonnet 3.5 for balanced tasks (best overall value)
-- Use Opus 3.5 only for complex reasoning (highest capability)
+- Use Haiku 4.5 for simple tasks (fastest, most cost-effective)
+- Use Sonnet 4.5 for balanced tasks (best overall value, recommended for most use cases)
+- Use Opus 4.1 only for complex reasoning (specialized for deep reasoning tasks)
 - Implement caching for repeated queries
 - Batch similar operations
 

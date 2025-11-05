@@ -156,7 +156,7 @@ Always provide data-driven insights with confidence levels.`;
 8. Competitor solutions they might be using`,
 
       options: {
-        model: 'claude-3-5-sonnet-20241022',
+        model: 'claude-sonnet-4-5-20250929',
         systemPrompt,
         allowedTools: ['WebSearch', 'WebFetch', 'Write'],
         mcpServers: {
@@ -221,7 +221,7 @@ ${lead.decision_makers.map(dm => `- ${dm.name} (${dm.title})`).join('\n')}
 Create a compelling proposal that addresses their specific needs and demonstrates clear value.`,
 
       options: {
-        model: 'claude-3-5-sonnet-20241022',
+        model: 'claude-sonnet-4-5-20250929',
         systemPrompt,
         allowedTools: ['Write'],
         maxTurns: 10
@@ -273,7 +273,7 @@ Lead context:
 Generate a multi-touch follow-up sequence with specific messages for each touchpoint.`,
 
       options: {
-        model: 'claude-3-5-haiku-20241022',  // Use faster model for templates
+        model: 'claude-haiku-4-5-20251001',  // Use faster model for templates
         systemPrompt,
         allowedTools: ['Write'],
         maxTurns: 10
@@ -321,7 +321,7 @@ Include:
 8. Proof points and case studies`,
 
       options: {
-        model: 'claude-3-5-sonnet-20241022',
+        model: 'claude-sonnet-4-5-20250929',
         systemPrompt,
         allowedTools: ['WebSearch', 'WebFetch', 'Write'],
         maxTurns: 15
