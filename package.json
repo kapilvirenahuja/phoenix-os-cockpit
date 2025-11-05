@@ -1,0 +1,48 @@
+{
+  "name": "phoenix-os-cockpit",
+  "version": "1.0.0",
+  "description": "A TypeScript-based application leveraging Claude's Agent SDK to build intelligent pre-sales and research agents.",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "nodemon --exec tsx src/index.ts",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "clean": "rm -rf dist",
+    "research": "tsx examples/research-agent.ts",
+    "presales": "tsx examples/presales-agent.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kapilvirenahuja/phoenix-os-cockpit.git"
+  },
+  "keywords": [
+    "claude",
+    "ai",
+    "agents",
+    "sdk",
+    "typescript",
+    "presales",
+    "research",
+    "automation"
+  ],
+  "author": "Phoenix OS Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/kapilvirenahuja/phoenix-os-cockpit/issues"
+  },
+  "homepage": "https://github.com/kapilvirenahuja/phoenix-os-cockpit#readme",
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.30",
+    "dotenv": "^17.2.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  }
+}
